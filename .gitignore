@@ -5,7 +5,6 @@ dist/
 webpack-assets.json
 webpack-stats.json
 npm-debug.log
-reports/
 *.log
 .DS_Store
 .vscode
