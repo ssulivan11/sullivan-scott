@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SectionOne /> renders 1`] = `
+Object {
+  "getInstance": [Function],
+  "getSectionOne": [Function],
+  "getSectionOneButton": [Function],
+}
+`;

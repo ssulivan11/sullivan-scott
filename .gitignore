@@ -1,0 +1,17 @@
+.idea/
+node_modules/
+dist/
+*.iml
+webpack-assets.json
+webpack-stats.json
+npm-debug.log
+reports/
+*.log
+.DS_Store
+.vscode
+tests/e2e/screenshots/new/
+tests/e2e/screenshots/errors/
+build/
+stubs/sessions/
+cypress/screenshots/
+cypress/helpers/dist/
