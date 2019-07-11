@@ -14,4 +14,3 @@ build/
 stubs/sessions/
 cypress/screenshots/
 cypress/helpers/dist/
-reports/
