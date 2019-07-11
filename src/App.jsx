@@ -4,10 +4,10 @@ import throttle from 'lodash.throttle'
 
 import content from './helpers/content'
 
-import SectionOne from './components/sections/SectionOne'
-import SectionTwo from './components/sections/SectionTwo'
-import SectionThree from './components/sections/SectionThree'
-import style from './app.scss'
+import Home from './containers/home/Home'
+import About from './containers/about/About'
+import Contact from './containers/contact/Contact'
+import style from './scss/main.scss'
 
 const App = () => {
   const getWindowSize = () => ({
@@ -21,10 +21,10 @@ const App = () => {
 
   const handleResize = throttle(() => {
     setWindowSize(getWindowSize())
-  }, 1)
+  }, 50)
   const handleScroll = throttle(() => {
     setScrollPosition(getScrollPosition())
-  }, 1)
+  }, 50)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -35,19 +35,23 @@ const App = () => {
     }
   }, [])
 
-  const isSectionOneActive = windowSize.height > scrollPosition.y
+  const isHomeActive = windowSize.height > scrollPosition.y
 
-  const { mainHeadingText, subHeadingText } = content
+  const { mainHeadingText, subHeadingText, social } = content
 
   return (
     <div className={style.container}>
-      <SectionOne
-        isActive={isSectionOneActive}
+      <Home
+        isActive={isHomeActive}
         windowSize={windowSize}
         mainHeadingText={mainHeadingText}
-        subHeadingText={subHeadingText}/>
-      <SectionTwo isActive={!isSectionOneActive} windowSize={windowSize} />
-      <SectionThree isActive={!isSectionOneActive} windowSize={windowSize} />
+        subHeadingText={subHeadingText}
+        data-test='home'
+      />
+      <About isActive={!isHomeActive} windowSize={windowSize} data-test='about' />
+      <Contact isActive={!isHomeActive} windowSize={windowSize} social={social} data-test='contact' />
+
+      <div className={style['gradient-background']} style={{ height: windowSize.height }} />
     </div>
   )
 }
