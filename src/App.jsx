@@ -9,6 +9,8 @@ import About from './containers/about/About'
 import Contact from './containers/contact/Contact'
 import style from './scss/main.scss'
 
+require('./assets/favicon.ico')
+
 const App = () => {
   const getWindowSize = () => ({
     height: window.innerHeight,
