@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
 const commonPaths = require('./paths')
 
 module.exports = {
@@ -57,6 +58,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+
     new MiniCssExtractPlugin({
       filename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,
       chunkFilename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,

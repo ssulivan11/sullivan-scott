@@ -13,4 +13,4 @@ const port = process.env.PORT || 3001
 app.listen(port)
 
 // eslint-disable-next-line no-console
-console.log(`\nServer started:\n\n- http://localhost:${port}\n`)
+console.log(`\n> Server started on http://localhost:${port}\n`)

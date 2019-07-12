@@ -7,6 +7,8 @@
   "scripts": {
     "--------- START ----------------------": "",
     "start": "NODE_ENV=development webpack-dev-server --open",
+    "start:dev": "NODE_ENV=development webpack && yarn serve",
+    "start:prod": "yarn build && yarn serve",
     "build": "NODE_ENV=production webpack",
     "serve": "node ./server.js",
     "--------- TESTS ----------------------": "",
@@ -30,6 +32,7 @@
     ]
   },
   "dependencies": {
+    "framer-motion": "^1.2.2",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -61,6 +64,7 @@
     "babel-preset-react-optimize": "1.0.1",
     "bundlesize": "^0.18.0",
     "clean-webpack-plugin": "3.0.0",
+    "compression-webpack-plugin": "^3.0.0",
     "connect-history-api-fallback": "1.6.0",
     "css-loader": "3.0.0",
     "cypress": "^3.4.0",
@@ -78,6 +82,7 @@
     "eslint-plugin-react": "7.14.2",
     "express": "^4.17.1",
     "file-loader": "4.0.0",
+    "html-webpack-change-assets-extension-plugin": "^1.2.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "^3.0.0",
     "jest": "24.8.0",
