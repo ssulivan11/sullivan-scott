@@ -52,8 +52,8 @@ module.exports = {
         deleteOriginalAssets: true,
       }),
     new HtmlWebpackPlugin({
-      jsExtension: isProduction ? '.gz' : 'js',
       template: commonPaths.templatePath,
+      minify: isProduction,
       title,
       description,
       canonical,
