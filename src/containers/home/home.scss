@@ -21,14 +21,14 @@
 .heading {
   font-family: 'Nunito', sans-serif;
   text-align: center;
-  text-transform: uppercase;
   color: $color-white;
   font-weight: 200;
   margin: 0;
 }
 
 .main-heading {
-  font-size: 2rem;
+  font-size: 3rem;
+  text-decoration: uppercase;
 }
 
 .sub-heading {
@@ -38,7 +38,7 @@
 .home-headings {
   position: fixed;
   opacity: 1;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .home-hr {
@@ -48,28 +48,21 @@
   margin: 15px 0 20px;
 }
 
-.home-buttons {
-  margin-top: 200px;
+.home-button {
+  border: 1px solid $color-white;
+  color: $color-white;
+  font-weight: 400;
+  color: white;
+  margin: 40px auto 0;
+  padding: 15px 20px;
+  display: block;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
 
-  ul {
-    margin: 0;
-    text-align: center;
-    padding: 0;
-    width: 100%;
-    height: 36px;
-    display: flex;
-  }
-
-  li {
-    color: $color-white;
-    border: 1px solid $color-white;
-    width: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    height: 75px;
-    margin: 15px;
+  &:hover {
     cursor: pointer;
+    transform: scale(1.2);
   }
 }

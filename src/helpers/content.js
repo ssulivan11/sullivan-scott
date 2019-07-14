@@ -3,7 +3,7 @@ const content = {
   description: 'Scott Sullivan | Sr UI Engineer',
   canonical: 'http://sullivanscott.com/',
   mainHeadingText: 'Scott Sullivan',
-  subHeadingText: 'Sr UI Engineer',
+  subHeadingText: 'UI Engineer - London / Chicago',
   social: {
     linkedIn: 'https://www.linkedin.com/in/scott-j-sullivan-14094a58/',
     github: 'https://github.com/ssulivan11',

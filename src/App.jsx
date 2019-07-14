@@ -29,6 +29,7 @@ const App = () => {
   }, 50)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     window.addEventListener('resize', handleResize)
     window.addEventListener('scroll', handleScroll)
     return () => {
@@ -37,21 +38,24 @@ const App = () => {
     }
   }, [])
 
-  const isHomeActive = windowSize.height > scrollPosition.y
+  const heightWithGive = windowSize.height - (windowSize.height / 100) * 20
+  const active =
+    // eslint-disable-next-line no-nested-ternary
+    heightWithGive > scrollPosition.y ? 'home' : heightWithGive * 2 > scrollPosition.y ? 'about' : 'contact'
 
   const { mainHeadingText, subHeadingText, social } = content
 
   return (
     <div className={style.container}>
       <Home
-        isActive={isHomeActive}
+        active={active}
         windowSize={windowSize}
         mainHeadingText={mainHeadingText}
         subHeadingText={subHeadingText}
         data-test='home'
       />
-      <About isActive={!isHomeActive} windowSize={windowSize} data-test='about' />
-      <Contact isActive={!isHomeActive} windowSize={windowSize} social={social} data-test='contact' />
+      <About active={active} windowSize={windowSize} data-test='about' />
+      <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
 
       <div className={style['gradient-background']} style={{ height: windowSize.height }} />
     </div>
