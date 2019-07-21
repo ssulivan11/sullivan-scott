@@ -1,35 +1,41 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { motion } from 'framer-motion'
+// import { motion, AnimatePresence } from 'framer-motion'
 import style from './about.scss'
 
-const About = ({ windowSize, isActive, 'data-test': dataTest }) => {
+const About = ({ windowSize, active, skills, bioHeading, bioText, 'data-test': dataTest }) => {
   return (
-    <div style={{ height: windowSize.height, position: 'relative' }} data-test={dataTest}>
-      <div className={`${style.about} ${isActive ? style['about-active'] : style['about-inactive']}`}>
-        <motion.img
-          className={style['profile-pic']}
+    <div className={style['about-wrapper']} style={{ minHeight: windowSize.height }} data-test={dataTest}>
+      <div
+        className={`container ${style.about} ${active === 'about' ? style['about-active'] : style['about-inactive']}`}>
+        <img
+          positionTransition
+          key='bio-pic'
+          className={style['bio-pic']}
           width='150'
           height='150'
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ x: 1000, opacity: 0 }}
+          initial={{ scale: 1 }}
+          animate={{ scale: 2 }}
           alt="Scott's profile pic"
-          src='https://scontent-lhr3-1.cdninstagram.com/vp/c5cdb50d8b3a1286724a1f27f8c125ab/5DA5F673/t51.2885-15/e35/14134966_1175689132493497_1840210486_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com'
+          src='https://scontent-lhr3-1.cdninstagram.com/vp/32a3801cf287c36ce0d8b09cc0551a61/5DE61703/t51.2885-19/51555128_153971348831636_6628374679469948928_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com'
         />
-        {/* <div className={style['bio-text']}>
-          <p>
-            I'm a ui web developer focusing on the frontend. I build complex React Redux applications and custom UI
-            components for startups and big brands around the world. Performance Optimization, Mobile-First Development,
-            React Redux, Node & ES6
-          </p>
-          <p>
-            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-            illum qui dolorem eum fugiat quo voluptas nulla pariatur. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-            corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
-          </p>
-        </div> */}
+        <h2 className={style['bio-heading']}>{bioHeading}</h2>
+        <p className={style['bio-text']}>{bioText}</p>
+
+        <div className={style['bio-grid']}>
+          {skills.map((skill) => {
+            return (
+              <div className={style['bio-grid-item']} key={skill.title}>
+                <h3 className={style['bio-grid-title']}>{skill.title}</h3>
+                <ul>
+                  {skill.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -40,7 +46,13 @@ About.propTypes = {
     height: PropTypes.number,
     width: PropTypes.number,
   }),
-  isActive: PropTypes.bool,
+  skills: PropTypes.shape({
+    title: PropTypes.string,
+    items: PropTypes.array,
+  }),
+  bioText: PropTypes.string,
+  bioHeading: PropTypes.string,
+  active: PropTypes.string,
   'data-test': PropTypes.string,
 }
 

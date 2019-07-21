@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 import style from './home.scss'
 
-const Home = ({ mainHeadingText, subHeadingText, windowSize, isActive, 'data-test': dataTest }) => (
+const Home = ({ mainHeadingText, subHeadingText, windowSize, active, 'data-test': dataTest }) => (
   <div style={{ height: windowSize.height, position: 'relative' }} data-test={dataTest}>
-    <div className={`${style.home} ${isActive ? style['home-active'] : style['home-inactive']}`}>
+    <div className={`container ${style.home} ${active === 'home' ? style['home-active'] : style['home-inactive']}`}>
       <div data-test='home-button' className={style['home-headings']}>
         <motion.h1
           className={`${style.heading} ${style['main-heading']}`}
@@ -27,6 +27,20 @@ const Home = ({ mainHeadingText, subHeadingText, windowSize, isActive, 'data-tes
           initial={{ y: 1000, opacity: 0 }}>
           {subHeadingText}
         </motion.h2>
+        <motion.button
+          type='button'
+          className={style['home-button']}
+          transition={{ delay: 2 }}
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          onClick={() =>
+            window.scrollTo({
+              top: windowSize.height,
+              behavior: 'smooth',
+            })
+          }>
+          Learn more
+        </motion.button>
       </div>
     </div>
   </div>
@@ -39,7 +53,7 @@ Home.propTypes = {
     height: PropTypes.number,
     width: PropTypes.number,
   }),
-  isActive: PropTypes.bool,
+  active: PropTypes.string,
   'data-test': PropTypes.string,
 }
 
