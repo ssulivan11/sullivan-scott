@@ -11,17 +11,24 @@
     "build": "NODE_ENV=production webpack",
     "serve": "node ./server.js",
     "--------- TESTS ----------------------": "",
+    "test": "yarn test:unit && yarn test:run",
     "test:unit": "jest --coverage --config ./config/jest/jest.config.js",
     "test:e2e": "yarn build && start-server-and-test serve http-get://localhost:3001/ test:e2e:open",
     "test:e2e:open": "cypress open",
+    "test:e2e:run": "cypress run",
     "--------- HELPERS ----------------------": "",
     "format": "prettier --write \"**/*.{json,md,js,jsx,css,scss}\"",
     "format:diff": "prettier --list-different \"**/*.{json,md,js,jsx,css,scss}\"",
-    "precommit": "lint-staged",
     "--------- BUNDLE CHECKS ----------------------": "",
     "bundle:size": "yarn build && bundlesize",
     "bundle:budget": "yarn build && start-server-and-test serve http-get://localhost:3001/ bundle:budget:run",
     "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
