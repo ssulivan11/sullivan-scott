@@ -49,20 +49,22 @@
 }
 
 .home-button {
-  border: 1px solid $color-white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-white;
   color: $color-white;
-  font-weight: 400;
+  font-weight: 600;
   color: white;
   margin: 40px auto 0;
   padding: 15px 20px;
   display: block;
   font-size: 0.75rem;
-  border-radius: 10px;
+  border-radius: 3px;
   background-color: transparent;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    // transform: scale(1.1);
   }
 }
