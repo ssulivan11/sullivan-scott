@@ -43,7 +43,7 @@ const App = () => {
     // eslint-disable-next-line no-nested-ternary
     heightWithGive > scrollPosition.y ? 'home' : heightWithGive * 2 > scrollPosition.y ? 'about' : 'contact'
 
-  const { mainHeadingText, subHeadingText, social } = content
+  const { mainHeadingText, subHeadingText, social, skills, bioHeading, bioText } = content
 
   return (
     <div className={style.container}>
@@ -54,7 +54,14 @@ const App = () => {
         subHeadingText={subHeadingText}
         data-test='home'
       />
-      <About active={active} windowSize={windowSize} data-test='about' />
+      <About
+        active={active}
+        windowSize={windowSize}
+        bioHeading={bioHeading}
+        bioText={bioText}
+        skills={skills}
+        data-test='about'
+      />
       <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
 
       <div className={style['gradient-background']} style={{ height: windowSize.height }} />

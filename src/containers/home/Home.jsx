@@ -30,7 +30,7 @@ const Home = ({ mainHeadingText, subHeadingText, windowSize, active, 'data-test'
         <motion.button
           type='button'
           className={style['home-button']}
-          transition={{ delay: 3 }}
+          transition={{ delay: 2 }}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           onClick={() =>

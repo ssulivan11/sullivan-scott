@@ -11,6 +11,7 @@ const Contact = ({ windowSize, active, social, 'data-test': dataTest }) => {
       <AnimatePresence>
         {active === 'contact' && (
           <motion.a
+            tabIndex={0}
             transition={{ delay: index / 5 }}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
