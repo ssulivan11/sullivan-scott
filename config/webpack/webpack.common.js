@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack')
 const convert = require('koa-connect')
 const history = require('connect-history-api-fallback')
@@ -64,7 +65,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         algorithm: 'gzip',
         filename: '[path].gz[query]',
-        deleteOriginalAssets: true,
+        deleteOriginalAssets: false,
       }),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
