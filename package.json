@@ -6,9 +6,9 @@
   "main": "server.js",
   "scripts": {
     "--------- START ------------------------------": "",
-    "start": "NODE_ENV=development webpack-dev-server --open",
+    "start": "yarn copy:assets && NODE_ENV=development webpack-dev-server --open",
     "start:prod": "yarn build && yarn serve",
-    "build": "NODE_ENV=production webpack",
+    "build": "yarn copy:assets && NODE_ENV=production webpack",
     "serve": "node ./server.js",
     "--------- TESTS ------------------------------": "",
     "test:unit": "jest --coverage --config ./config/jest/jest.config.js",
@@ -24,7 +24,11 @@
     "--------- BUNDLE CHECKS ----------------------": "",
     "bundle:size": "yarn build && bundlesize",
     "bundle:budget": "yarn build && start-server-and-test serve http-get://localhost:3001/ bundle:budget:run",
-    "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view"
+    "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view",
+    "--------- HELPERS ----------------------------": "",
+    "check:status": "node -e 'require(\"./config/helpers/nodeScripts\").statusCheck()' && node -e 'require(\"./config/helpers/nodeScripts\").branchCheck()'",
+    "copy:assets": "node -e 'require(\"./config/helpers/nodeScripts\").moveAssets()'",
+    "nuke": "yarn cache clean && yarn global add rimraf && rimraf node_modules && yarn && yarn run clean"
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
@@ -36,7 +40,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test:unit && yarn bundle:size"
+      "pre-push": "yarn check:status && yarn test:unit && yarn bundle:size"
     }
   },
   "dependencies": {
@@ -84,8 +88,10 @@
     "bundlesize": "^0.18.0",
     "chalk": "^2.4.2",
     "clean-webpack-plugin": "3.0.0",
+    "colors": "^1.3.3",
     "compression-webpack-plugin": "^3.0.0",
     "connect-history-api-fallback": "1.6.0",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "3.0.0",
     "cypress": "^3.4.0",
     "enzyme": "3.10.0",
@@ -102,6 +108,7 @@
     "eslint-plugin-react": "7.14.2",
     "express": "^4.17.1",
     "file-loader": "4.0.0",
+    "git-branch": "^2.0.1",
     "html-webpack-change-assets-extension-plugin": "^1.2.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "^1.2.0",
@@ -120,6 +127,7 @@
     "prettier": "1.18.2",
     "sass-loader": "7.1.0",
     "script-ext-html-webpack-plugin": "2.1.3",
+    "shelljs": "^0.8.3",
     "start-server-and-test": "^1.9.1",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.3.0",

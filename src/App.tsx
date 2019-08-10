@@ -9,8 +9,6 @@ import About from './containers/about/About'
 import Contact from './containers/contact/Contact'
 import * as style from './scss/main.scss'
 
-require('./assets/favicon.ico')
-
 interface AppProps {
   compiler: string
   framework: string

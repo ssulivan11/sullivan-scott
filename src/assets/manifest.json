@@ -1,0 +1,12 @@
+{
+  "short_name": "SullivanScott",
+  "name": "SullivanScott",
+  "description": "Scott Sullivan UI Engineer Website",
+  "start_url": "/?utm_source=a2hs",
+  "display": "standalone",
+  "orientation": "natural",
+  "lang": "en",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000",
+  "categories": ["technology", "web"]
+}
