@@ -11,11 +11,12 @@ const config = {
     '\\.(jpg|gif|ttf|eot|svg)$': '<rootDir>/config/mocks/fileMock.js',
   },
   transform: {
+    '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
     '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
-  moduleFileExtensions: ['css', 'scss', 'js', 'json', 'jsx'],
+  moduleFileExtensions: ['tsx', 'css', 'scss', 'js', 'json', 'jsx'],
 }
 
 module.exports = config

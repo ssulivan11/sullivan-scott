@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import Home from '../Home'
@@ -6,6 +6,7 @@ import Home from '../Home'
 const defaultTestProps = {
   mainHeadingText: 'Main Heading text',
   subHeadingText: 'Subheading text',
+  'data-test': 'home',
   windowSize: {
     height: 500,
     width: 0,
