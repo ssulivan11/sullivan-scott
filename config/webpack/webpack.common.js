@@ -23,6 +23,21 @@ module.exports = {
         exclude: /(node_modules)/,
       },
       {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+        ],
+      },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
+      },
+      {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
         loader: 'file-loader?name=[name].[ext]', // <-- retain original file name
       },
@@ -40,7 +55,7 @@ module.exports = {
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -54,6 +69,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
       minify: isProduction,
+      jsExtension: isProduction ? '.gz' : '.js',
       title,
       description,
       canonical,
