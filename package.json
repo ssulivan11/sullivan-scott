@@ -11,7 +11,6 @@
     "build": "NODE_ENV=production webpack",
     "serve": "node ./server.js",
     "--------- TESTS ------------------------------": "",
-    "test": "yarn test:unit && yarn test:run",
     "test:unit": "jest --coverage --config ./config/jest/jest.config.js",
     "test:e2e": "yarn build && start-server-and-test serve http-get://localhost:3001/ test:e2e:open",
     "test:e2e:open": "cypress open",
@@ -37,7 +36,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn check:status && yarn lint && yarn test:unit --silent && yarn build:client && yarn bundle:size && git push -u origin HEAD --no-verify --force"
+      "pre-push": "yarn test:unit && yarn bundle:size"
     }
   },
   "dependencies": {
