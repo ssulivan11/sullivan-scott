@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -38,7 +39,10 @@ module.exports = {
     },
     runtimeChunk: true,
   },
-
+  externals: {
+    react: 'react',
+    'react-dom': 'ReactDOM',
+  },
   module: {
     rules: [
       {

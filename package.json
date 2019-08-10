@@ -45,8 +45,8 @@
     "express-static-gzip": "^1.1.3",
     "framer-motion": "^1.2.2",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
     "react-hot-loader": "4.12.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.4",
@@ -131,15 +131,15 @@
   "bundlesize": [
     {
       "path": "./build/js/main.*.js",
-      "maxSize": "1.4 kB"
+      "maxSize": "4.1 kB"
     },
     {
       "path": "./build/js/vendors.*.js",
-      "maxSize": "38 kB"
+      "maxSize": "24.2 kB"
     },
     {
       "path": "./build/css/main.*.css",
-      "maxSize": "1 kB"
+      "maxSize": "2.1 kB"
     }
   ]
 }
