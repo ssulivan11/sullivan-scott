@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require('webpack')
 const convert = require('koa-connect')
@@ -9,7 +10,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const commonPaths = require('./paths')
 const content = require('../../src/helpers/content')
 
-const { title, description, canonical } = content
+const { title, description, canonical, social } = content
 
 const NODE_ENV = process.env.NODE_ENV || 'production'
 const isProduction = NODE_ENV === 'production'
@@ -60,6 +61,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
+    // new CopyPlugin([{ from: 'src/assets/**', to: './', flatten: true }]),
     isProduction &&
       new CompressionPlugin({
         test: /\.(js|jsx)$/,
@@ -74,6 +76,7 @@ module.exports = {
       title,
       description,
       canonical,
+      social,
     }),
     isProduction && new HtmlWebpackChangeAssetsExtensionPlugin(),
     new ScriptExtHtmlWebpackPlugin({
