@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "natural",
   "lang": "en",
-  "theme_color": "#FFFFFF",
-  "background_color": "#000000",
-  "categories": ["technology", "web"]
+  "theme_color": "#333333",
+  "background_color": "#333333",
+  "categories": ["javascript", "web"]
 }
