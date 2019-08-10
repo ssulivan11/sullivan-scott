@@ -7,6 +7,8 @@ const content = {
   bioHeading: "Hello, I’m Scott, it's nice to meet you.",
   bioText:
     "I'm an experienced Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences.",
+  bioImg:
+    'https://scontent-lhr3-1.cdninstagram.com/vp/32a3801cf287c36ce0d8b09cc0551a61/5DE61703/t51.2885-19/51555128_153971348831636_6628374679469948928_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com',
   skills: [
     {
       title: 'Development',

@@ -8,15 +8,15 @@
   flex: 1;
   overflow: auto;
   z-index: 11;
-  position: relative;
+  position: absolute !important;
   height: 100%;
 
-  &-inactive {
-    .contact-buttons {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
+  // &-inactive {
+  //   .contact-buttons {
+  //     opacity: 0;
+  //     pointer-events: none;
+  //   }
+  // }
 
   ul {
     margin: 0;
@@ -52,16 +52,16 @@
 }
 
 .contact-buttons {
-  position: fixed;
-  opacity: 1;
-  transition: opacity 0.1s ease-in-out;
-  top: 50%;
-  height: 36px;
-  margin-top: -18px;
+  // position: absolute;
+  // opacity: 1;
+  // transition: opacity 0.1s ease-in-out;
+  // top: 50%;
+  // height: 36px;
+  // margin-top: -18px;
 
-  left: 50%;
+  // left: 50%;
   width: 400px;
-  margin-left: -200px;
+  // margin-left: -200px;
 }
 
 .contact-footer {
