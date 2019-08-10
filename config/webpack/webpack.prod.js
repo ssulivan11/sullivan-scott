@@ -39,10 +39,6 @@ module.exports = {
     },
     runtimeChunk: true,
   },
-  externals: {
-    react: 'react',
-    'react-dom': 'ReactDOM',
-  },
   module: {
     rules: [
       {

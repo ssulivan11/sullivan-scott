@@ -8,7 +8,7 @@
     "--------- START ------------------------------": "",
     "start": "yarn copy:assets && NODE_ENV=development webpack-dev-server --open",
     "start:prod": "yarn build && yarn serve",
-    "build": "yarn copy:assets && NODE_ENV=production webpack",
+    "build": "NODE_ENV=production webpack && yarn copy:assets",
     "serve": "node ./server.js",
     "--------- TESTS ------------------------------": "",
     "test:unit": "jest --coverage --config ./config/jest/jest.config.js",

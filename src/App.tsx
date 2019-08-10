@@ -46,7 +46,7 @@ const App: React.FunctionComponent<AppProps> = () => {
     // eslint-disable-next-line no-nested-ternary
     heightWithGive > scrollPosition.y ? 'home' : heightWithGive * 2 > scrollPosition.y ? 'about' : 'contact'
 
-  const { mainHeadingText, subHeadingText, social, skills, bioHeading, bioText } = content
+  const { mainHeadingText, subHeadingText, social, skills, bioHeading, bioText, bioImg } = content
 
   return (
     <div className={style.container}>
@@ -63,11 +63,12 @@ const App: React.FunctionComponent<AppProps> = () => {
         bioHeading={bioHeading}
         bioText={bioText}
         skills={skills}
+        bioImg={bioImg}
         data-test='about'
       />
       <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
 
-      <div className={style['gradient-background']} style={{ height: windowSize.height }} />
+      {/* <div className={style['gradient-background']} style={{ height: windowSize.height }} /> */}
     </div>
   )
 }
