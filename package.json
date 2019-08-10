@@ -27,18 +27,18 @@
     "bundle:budget": "yarn build && start-server-and-test serve http-get://localhost:3001/ bundle:budget:run",
     "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test && yarn bundle:size"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
       "prettier --write",
       "eslint --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn check:status && yarn lint && yarn test:unit --silent && yarn build:client && yarn bundle:size && git push -u origin HEAD --no-verify --force"
+    }
   },
   "dependencies": {
     "compression": "^1.7.4",
