@@ -48,7 +48,7 @@ const About: React.FunctionComponent<AboutProps> = ({
             return (
               <div className={style['bio-grid-item']} key={skill.title}>
                 <h3 className={style['bio-grid-title']}>{skill.title}</h3>
-                <ul>
+                <ul tabIndex={0}>
                   {skill.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}

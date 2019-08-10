@@ -24,7 +24,6 @@ const Contact: React.FunctionComponent<ContactProps> = ({ windowSize, active, so
       <AnimatePresence>
         {active === 'contact' && (
           <motion.a
-            tabIndex={0}
             transition={{ delay: index / 5 }}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -49,7 +48,7 @@ const Contact: React.FunctionComponent<ContactProps> = ({ windowSize, active, so
           active === 'about' || active === 'contact' ? style['contact-active'] : style['contact-inactive']
         }`}>
         <div className={style['contact-buttons']}>
-          <ul>{socialList}</ul>
+          <ul tabIndex={0}>{socialList}</ul>
         </div>
       </div>
       <footer className={style['contact-footer']}>
