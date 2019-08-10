@@ -1,9 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import { motion } from 'framer-motion'
-import style from './home.scss'
 
-const Home = ({ mainHeadingText, subHeadingText, windowSize, active, 'data-test': dataTest }) => (
+import * as style from './home.scss'
+
+interface HomeProps {
+  windowSize: {
+    height: number
+    width: number
+  }
+  mainHeadingText: string
+  subHeadingText: string
+  active?: string
+  'data-test': string
+}
+
+const Home: React.FunctionComponent<HomeProps> = ({
+  mainHeadingText,
+  subHeadingText,
+  windowSize,
+  active,
+  'data-test': dataTest,
+}) => (
   <div style={{ height: windowSize.height, position: 'relative' }} data-test={dataTest}>
     <div className={`container ${style.home} ${active === 'home' ? style['home-active'] : style['home-inactive']}`}>
       <div data-test='home-button' className={style['home-headings']}>
@@ -16,7 +33,7 @@ const Home = ({ mainHeadingText, subHeadingText, windowSize, active, 'data-test'
         </motion.h1>
         <motion.hr
           className={style['home-hr']}
-          transition={{ delay: '0.8' }}
+          transition={{ delay: 1 }}
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: 1000, opacity: 0 }}
         />
@@ -45,16 +62,5 @@ const Home = ({ mainHeadingText, subHeadingText, windowSize, active, 'data-test'
     </div>
   </div>
 )
-
-Home.propTypes = {
-  mainHeadingText: PropTypes.string,
-  subHeadingText: PropTypes.string,
-  windowSize: PropTypes.shape({
-    height: PropTypes.number,
-    width: PropTypes.number,
-  }),
-  active: PropTypes.string,
-  'data-test': PropTypes.string,
-}
 
 export default Home

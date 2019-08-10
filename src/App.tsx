@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
 import { hot } from 'react-hot-loader/root'
-import throttle from 'lodash.throttle'
+import * as throttle from 'lodash.throttle'
 
-import content from './helpers/content'
+import * as content from './helpers/content'
 
 import Home from './containers/home/Home'
 import About from './containers/about/About'
 import Contact from './containers/contact/Contact'
-import style from './scss/main.scss'
+import * as style from './scss/main.scss'
 
 require('./assets/favicon.ico')
 
-const App = () => {
+interface AppProps {
+  compiler: string
+  framework: string
+}
+
+const App: React.FunctionComponent<AppProps> = () => {
   const getWindowSize = () => ({
     height: window.innerHeight,
     width: window.innerWidth,
   })
   const getScrollPosition = () => ({ y: window.pageYOffset })
 
-  const [windowSize, setWindowSize] = useState(getWindowSize())
-  const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
+  const [windowSize, setWindowSize] = React.useState(getWindowSize())
+  const [scrollPosition, setScrollPosition] = React.useState(getScrollPosition())
 
   const handleResize = throttle(() => {
     setWindowSize(getWindowSize())
@@ -28,7 +33,7 @@ const App = () => {
     setScrollPosition(getScrollPosition())
   }, 50)
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0)
     window.addEventListener('resize', handleResize)
     window.addEventListener('scroll', handleScroll)
