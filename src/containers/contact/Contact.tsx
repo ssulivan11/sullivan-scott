@@ -1,11 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import style from './contact.scss'
 
+import * as style from './contact.scss'
 import * as svg from '../../helpers/svg'
 
-const Contact = ({ windowSize, active, social, 'data-test': dataTest }) => {
+interface ContactProps {
+  windowSize: {
+    height: number
+    width: number
+  }
+  social: {
+    linkedIn: string
+    github: string
+    codePen: string
+  }
+  active?: string
+  'data-test': string
+}
+
+const Contact: React.FunctionComponent<ContactProps> = ({ windowSize, active, social, 'data-test': dataTest }) => {
   const socialList = Object.keys(social).map((item, index) => (
     <li key={item}>
       <AnimatePresence>
@@ -44,20 +57,6 @@ const Contact = ({ windowSize, active, social, 'data-test': dataTest }) => {
       </footer>
     </div>
   )
-}
-
-Contact.propTypes = {
-  windowSize: PropTypes.shape({
-    height: PropTypes.number,
-    width: PropTypes.number,
-  }),
-  active: PropTypes.string,
-  social: PropTypes.shape({
-    linkedIn: PropTypes.string,
-    github: PropTypes.string,
-    codePen: PropTypes.string,
-  }),
-  'data-test': PropTypes.string,
 }
 
 export default Contact

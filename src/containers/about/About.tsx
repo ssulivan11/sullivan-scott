@@ -13,7 +13,7 @@ interface AboutProps {
   'data-test': string
 }
 
-export const About: React.FunctionComponent<AboutProps> = ({
+const About: React.FunctionComponent<AboutProps> = ({
   windowSize,
   active,
   skills,
