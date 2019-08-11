@@ -17,7 +17,7 @@
     "prettier": "prettier --write \"**/*.{json,md,js,jsx,css,scss}\"",
     "prettier:diff": "prettier --list-different \"**/*.{json,md,js,jsx,css,scss}\"",
     "--------- BUNDLE CHECKS ----------------------": "",
-    "bundle:size": "yarn build && bundlesize",
+    "bundle:size": "NODE_ENV=production yarn build && bundlesize",
     "bundle:budget": "yarn build && start-server-and-test serve http-get://localhost:3001/ bundle:budget:run",
     "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view",
     "--------- UNIT TESTS ------------------------------": "",
