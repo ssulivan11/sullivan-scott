@@ -10,7 +10,7 @@ module.exports.statusCheck = () => {
     const monitoredFiles = ['.snap', '.bundlesizeconfig']
     const noInvalidUncommited = !monitoredFiles.some((elem) => stdout.includes(elem))
     if (stdout.length === 0 || noInvalidUncommited) {
-      console.log(`${`\n ✔`.green} Git Status Check Valid`)
+      console.log(`${`\n ✔`.green}  Git Status Check Valid`)
       shell.exec(process.exit(0))
     } else {
       console.log(
@@ -25,22 +25,18 @@ module.exports.statusCheck = () => {
 module.exports.branchCheck = () => {
   branch((err, name) => {
     if (err) throw err
-    const validBranchDirs = ['feature/', 'refactor/', 'bug/', 'upgrades/', 'tests/', 'release-', 'hotfix-']
+    const validBranchDirs = ['feature/', 'refactor/', 'bug/']
     let validName = false
     for (let i = 0; i !== validBranchDirs.length; i += 1) {
       if (name.indexOf(validBranchDirs[i]) !== -1) validName = true
     }
     if (!validName) {
-      console.log('\n------------------------------------------------------------------------'.grey)
-      console.log(`${`\nGit Branch Name Error:`.red} - ${`${name}`.grey} \n`)
-      console.log(
-        `Your branch name does not follow valid naming conventions.\nPlease read up on the valid directory names in the CONTRIBUTING.md documentation.\n`,
-      )
-      console.log('> docs/CONTRIBUTING.md\n'.blue)
-      console.log('------------------------------------------------------------------------\n'.grey)
+      console.log(`${`\n ❌  Git Branch Name Error:`} - ${`${name}`.grey} \n`)
+      console.log(`    ▶ Your branch name does not match the valid checks, please use of the following:`)
+      console.log(`      ${validBranchDirs}\n`.blue)
       shell.exec(process.exit(1))
     } else {
-      console.log(`${`\n ✔`.green} Git Branch Name Valid - ${`${name}`.grey} \n`)
+      console.log(`${`\n ✔`.green}  Git Branch Name Valid - ${`${name}`.grey} \n`)
       shell.exec(process.exit(0))
     }
   })
@@ -56,7 +52,7 @@ module.exports.moveAssets = () => {
 
       source.pipe(dest)
       source.on('end', () => {
-        console.log(`${`✔`.green} Copied - ${files[i]}`)
+        console.log(`${`✔`.green}  Copied - ${files[i]}`)
       })
       source.on('error', (err) => {
         console.log(err)

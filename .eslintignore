@@ -1,0 +1,6 @@
+*.spec.js
+*.story.jsx
+*.md
+config/
+dist/
+**/__snapshots__/**
