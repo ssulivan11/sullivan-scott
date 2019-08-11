@@ -1,14 +1,16 @@
 import * as React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Home from '../Home'
+import About from '../About'
 import * as content from '../../../helpers/content'
 
 const defaultTestProps = {
-  mainHeadingText: content.mainHeadingText,
-  subHeadingText: content.subHeadingText,
-  'data-test': 'home',
-  active: 'home',
+  skills: content.skills,
+  bioText: content.bioText,
+  bioHeading: content.bioHeading,
+  bioImg: content.bioImg,
+  'data-test': 'contact',
+  active: 'about',
   windowSize: {
     height: 500,
     width: 0,
@@ -17,21 +19,20 @@ const defaultTestProps = {
 
 const inactiveProps = {
   ...defaultTestProps,
-  active: 'contact',
+  active: 'home',
 }
 
 const setup = (renderer = mount, props) => {
-  const component = renderer(<Home {...props} />)
+  const component = renderer(<About {...props} />)
   return {
     getInstance: () => component,
-    getHome: () => component.find(Home),
-    getSectionOneButton: () => component.find('[type="button"]'),
+    getAbout: () => component.find(About),
     debug: () => component.debug(),
   }
 }
 
 let wrapper
-describe('<Home />', () => {
+describe('<About />', () => {
   it('active container', () => {
     wrapper = setup(shallow, defaultTestProps)
     expect(wrapper).toBeDefined()
@@ -42,12 +43,5 @@ describe('<Home />', () => {
     wrapper = setup(shallow, inactiveProps)
     expect(wrapper).toBeDefined()
     expect(wrapper).toMatchSnapshot()
-  })
-
-  it('onclick scrollTo', () => {
-    window.scrollTo = jest.fn()
-    wrapper = setup(shallow, defaultTestProps)
-    wrapper.getSectionOneButton().simulate('click')
-    expect(window.scrollTo).toHaveBeenCalled()
   })
 })

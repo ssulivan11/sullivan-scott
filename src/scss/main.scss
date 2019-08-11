@@ -137,10 +137,10 @@
   background: linear-gradient(-45deg, #247ba0, #36817a, #36817a, #005b80);
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
-  // position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: $layer-background;
+  z-index: 10;
   width: 100%;
 }
 

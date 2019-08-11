@@ -16,8 +16,8 @@ interface AppProps {
 
 const App: React.FunctionComponent<AppProps> = () => {
   const getWindowSize = () => ({
-    height: window.innerHeight,
-    width: window.innerWidth,
+    height: document.documentElement.clientHeight,
+    width: document.documentElement.clientWidth,
   })
   const getScrollPosition = () => ({ y: window.pageYOffset })
 

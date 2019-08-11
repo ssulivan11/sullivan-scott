@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Home /> renders 1`] = `
+exports[`<Home /> active container 1`] = `
 Object {
+  "debug": [Function],
   "getHome": [Function],
   "getInstance": [Function],
+  "getSectionOneButton": [Function],
+}
+`;
+
+exports[`<Home /> inactive container 1`] = `
+Object {
+  "debug": [Function],
+  "getHome": [Function],
+  "getInstance": [Function],
+  "getSectionOneButton": [Function],
 }
 `;

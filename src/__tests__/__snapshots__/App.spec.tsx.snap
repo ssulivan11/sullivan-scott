@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> active container 1`] = `
+Object {
+  "debug": [Function],
+  "getApp": [Function],
+  "getInstance": [Function],
+}
+`;
+
+exports[`<App /> active container 2`] = `
+Object {
+  "debug": [Function],
+  "getApp": [Function],
+  "getInstance": [Function],
+}
+`;
