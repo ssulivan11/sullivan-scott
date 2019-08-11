@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About /> active container 1`] = `
+Object {
+  "debug": [Function],
+  "getAbout": [Function],
+  "getInstance": [Function],
+}
+`;
+
+exports[`<About /> inactive container 1`] = `
+Object {
+  "debug": [Function],
+  "getAbout": [Function],
+  "getInstance": [Function],
+}
+`;

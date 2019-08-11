@@ -7,7 +7,7 @@
   justify-content: center;
   flex: 1;
   overflow: auto;
-  z-index: 11;
+  z-index: 100;
   position: absolute !important;
   height: 100%;
   background: $color-grey;
@@ -70,7 +70,7 @@
   bottom: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
-  z-index: $layer-content;
+  z-index: 110;
   text-align: center;
   color: $color-white;
   padding: 15px 0;

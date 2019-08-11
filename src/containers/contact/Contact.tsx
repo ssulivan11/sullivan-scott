@@ -20,8 +20,8 @@ interface ContactProps {
 
 const Contact: React.FunctionComponent<ContactProps> = ({ windowSize, active, social, 'data-test': dataTest }) => {
   const socialList = Object.keys(social).map((item, index) => (
-    <li key={item}>
-      <AnimatePresence>
+    <li key={`${item}-${index}`}>
+      <AnimatePresence key={'AnimatePresence'}>
         {active === 'contact' && (
           <motion.a
             transition={{ delay: index / 5 }}
