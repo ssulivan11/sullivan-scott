@@ -65,7 +65,6 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    // new CopyPlugin([{ from: 'src/assets/**', to: './', flatten: true }]),
     isProduction &&
       new CompressionPlugin({
         test: /\.(js|jsx)$/,

@@ -7,14 +7,9 @@
   "scripts": {
     "--------- START ------------------------------": "",
     "start": "yarn copy:assets && NODE_ENV=development webpack-dev-server --open",
-    "start:prod": "yarn build && yarn serve",
-    "build": "NODE_ENV=production webpack && yarn copy:assets",
+    "start:prod": "NODE_ENV=production yarn build && yarn serve",
+    "build": "webpack && yarn copy:assets",
     "serve": "node ./server.js",
-    "--------- TESTS ------------------------------": "",
-    "test:unit": "jest --coverage --config ./config/jest/jest.config.js",
-    "test:e2e": "yarn build && start-server-and-test serve http-get://localhost:3001/ test:e2e:open",
-    "test:e2e:open": "cypress open",
-    "test:e2e:run": "cypress run",
     "--------- LINTING ----------------------------": "",
     "lint": "yarn lint:scss && yarn lint:js",
     "lint:scss": "stylelint 'src/**.scss' --ignore-path .eslintignore",
@@ -22,9 +17,17 @@
     "prettier": "prettier --write \"**/*.{json,md,js,jsx,css,scss}\"",
     "prettier:diff": "prettier --list-different \"**/*.{json,md,js,jsx,css,scss}\"",
     "--------- BUNDLE CHECKS ----------------------": "",
-    "bundle:size": "yarn build && bundlesize",
+    "bundle:size": "NODE_ENV=production yarn build && bundlesize",
     "bundle:budget": "yarn build && start-server-and-test serve http-get://localhost:3001/ bundle:budget:run",
     "bundle:budget:run": "yarn lighthouse http://localhost:3001/ --budget-path=config/performance/lighthouse-budgets.json --output-path=reports/lighthouse-results.html --view",
+    "--------- UNIT TESTS ------------------------------": "",
+    "test:unit": "jest --coverage --config ./config/jest/jest.config.js",
+    "test:unit:watch": "jest --coverage --watch --config ./config/jest/jest.config.js",
+    "--------- E2E TESTS ------------------------------": "",
+    "test:e2e": "NODE_ENV=development yarn build && start-server-and-test serve http-get://localhost:3001/ cypress:open",
+    "test:e2e:run": "NODE_ENV=development yarn build && start-server-and-test serve http-get://localhost:3001/ cypress:run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "--------- HELPERS ----------------------------": "",
     "check:status": "node -e 'require(\"./config/helpers/nodeScripts\").statusCheck()' && node -e 'require(\"./config/helpers/nodeScripts\").branchCheck()'",
     "copy:assets": "node -e 'require(\"./config/helpers/nodeScripts\").moveAssets()'",
@@ -32,16 +35,20 @@
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
-      "prettier --write",
-      "eslint --fix",
+      "yarn prettier",
+      "yarn lint --fix",
       "git add"
     ]
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn check:status && yarn test:unit && yarn bundle:size"
+      "pre-push": "yarn check:status && yarn test:unit && yarn bundle:size && yarn test:e2e:run"
     }
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=5"
   },
   "dependencies": {
     "compression": "^1.7.4",

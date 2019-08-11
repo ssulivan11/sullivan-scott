@@ -58,7 +58,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-
     new MiniCssExtractPlugin({
       filename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,
       chunkFilename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,
