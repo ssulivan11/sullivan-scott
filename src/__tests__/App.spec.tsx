@@ -33,7 +33,7 @@ describe('<App />', () => {
 })
 
 describe('<App />', () => {
-  it('active container', () => {
+  it('active container "contact"', () => {
     wrapper = setup(mount)
 
     ReactTestUtils.act(() => {
@@ -45,5 +45,48 @@ describe('<App />', () => {
 
     expect(wrapper).toBeDefined()
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('active container "home"', () => {
+    wrapper = setup(mount)
+
+    // @ts-ignore
+    Object.defineProperty(document.documentElement, 'clientHeight', { writable: true, configurable: true, value: 1000 })
+    // @ts-ignore
+    window.pageYOffset = 500
+
+    ReactTestUtils.act(() => {
+      // @ts-ignore
+      window.dispatchEvent(new window.UIEvent('scroll'))
+      // @ts-ignore
+      window.dispatchEvent(new window.UIEvent('resize'))
+    })
+
+    expect(wrapper).toBeDefined()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('active container "about"', () => {
+    wrapper = setup(mount)
+
+    // @ts-ignore
+    Object.defineProperty(document.documentElement, 'clientHeight', { writable: true, configurable: true, value: 600 })
+    // @ts-ignore
+    window.pageYOffset = 500
+
+    ReactTestUtils.act(() => {
+      // @ts-ignore
+      window.dispatchEvent(new window.UIEvent('scroll'))
+      // @ts-ignore
+      window.dispatchEvent(new window.UIEvent('resize'))
+    })
+
+    expect(wrapper).toBeDefined()
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('should unnmount resize listeners functions', () => {
+    const wrapper = mount(<App {...defaultProps} />)
+    wrapper.unmount()
   })
 })
