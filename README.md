@@ -1,4 +1,4 @@
-# Scott Sullivan
+# Scott Sullivans Info Site
 
 I'm an experienced UI Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences. This is the website for my informational website about me and can be found here at [sullivanscott.com](http://sullivanscott.com/).
 
