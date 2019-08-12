@@ -16,10 +16,10 @@ const config = {
   coveragePathIgnorePatterns,
   coverageThreshold: {
     global: {
-      statements: 65,
-      branches: 61,
-      functions: 57,
-      lines: 56,
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100,
     },
   },
   transform: {
