@@ -3,6 +3,7 @@ import { hot } from 'react-hot-loader/root'
 import * as throttle from 'lodash.throttle'
 
 import * as content from './helpers/content'
+import ErrorBoundary from './helpers/ErrorBoundary'
 
 import Home from './containers/home/Home'
 import About from './containers/about/About'
@@ -50,23 +51,29 @@ const App: React.FunctionComponent<AppProps> = () => {
 
   return (
     <div className={style.container}>
-      <Home
-        active={active}
-        windowSize={windowSize}
-        mainHeadingText={mainHeadingText}
-        subHeadingText={subHeadingText}
-        data-test='home'
-      />
-      <About
-        active={active}
-        windowSize={windowSize}
-        bioHeading={bioHeading}
-        bioText={bioText}
-        skills={skills}
-        bioImg={bioImg}
-        data-test='about'
-      />
-      <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
+      <ErrorBoundary>
+        <Home
+          active={active}
+          windowSize={windowSize}
+          mainHeadingText={mainHeadingText}
+          subHeadingText={subHeadingText}
+          data-test='home'
+        />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <About
+          active={active}
+          windowSize={windowSize}
+          bioHeading={bioHeading}
+          bioText={bioText}
+          skills={skills}
+          bioImg={bioImg}
+          data-test='about'
+        />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
+      </ErrorBoundary>
 
       {/* <div className={style['gradient-background']} style={{ height: windowSize.height }} /> */}
     </div>

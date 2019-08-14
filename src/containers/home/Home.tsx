@@ -35,7 +35,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
           className={style['home-hr']}
           transition={{ delay: 1 }}
           animate={{ x: 0, opacity: 1 }}
-          initial={{ x: 1000, opacity: 0 }}
+          initial={{ x: 100, opacity: 0 }}
         />
         <motion.h2
           className={`${style.heading} ${style['sub-heading']}`}
@@ -50,6 +50,8 @@ const Home: React.FunctionComponent<HomeProps> = ({
           transition={{ delay: 2 }}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={() =>
             window.scrollTo({
               top: windowSize.height,

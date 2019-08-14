@@ -12,13 +12,6 @@
   height: 100%;
   background: $color-grey;
 
-  // &-inactive {
-  //   .contact-buttons {
-  //     opacity: 0;
-  //     pointer-events: none;
-  //   }
-  // }
-
   ul {
     margin: 0;
     text-align: center;
@@ -31,48 +24,34 @@
   li {
     width: 100%;
   }
-}
 
-.social-link {
-  width: 35px;
-  height: 35px;
-  font-size: 15px;
-  display: inline-block;
-  color: $color-white;
-  text-decoration: none;
-  margin: 0 auto;
-  transition: all 0.3s ease-in-out;
+  &-link {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    display: inline-block;
+    color: $color-white;
+    text-decoration: none;
+    margin: 0 auto;
 
-  &:hover {
-    transform: scale(1.5) !important;
+    svg {
+      fill: $color-white;
+    }
   }
 
-  svg {
-    fill: $color-white;
+  &-buttons {
+    width: 400px;
   }
-}
 
-.contact-buttons {
-  // position: absolute;
-  // opacity: 1;
-  // transition: opacity 0.1s ease-in-out;
-  // top: 50%;
-  // height: 36px;
-  // margin-top: -18px;
-
-  // left: 50%;
-  width: 400px;
-  // margin-left: -200px;
-}
-
-.contact-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 110;
-  text-align: center;
-  color: $color-white;
-  padding: 15px 0;
-  font-size: 0.75rem;
+  &-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 110;
+    text-align: center;
+    color: $color-white;
+    padding: 15px 0;
+    font-size: 0.75rem;
+  }
 }

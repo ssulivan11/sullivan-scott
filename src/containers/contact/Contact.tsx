@@ -21,15 +21,18 @@ interface ContactProps {
 const Contact: React.FunctionComponent<ContactProps> = ({ windowSize, active, social, 'data-test': dataTest }) => {
   const socialList = Object.keys(social).map((item, index) => (
     <li key={`${item}-${index}`}>
-      <AnimatePresence key={'AnimatePresence'}>
+      <AnimatePresence key={'AnimatePresence-contact'}>
         {active === 'contact' && (
           <motion.a
             transition={{ delay: index / 5 }}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className={style['social-link']}
+            exit={{ y: 0, opacity: 1 }}
+            className={style['contact-link']}
             title={`Go to Scott's ${item} page`}
-            href={social[item]}>
+            href={social[item]}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}>
             <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
               <path d={svg[item]} />
             </svg>

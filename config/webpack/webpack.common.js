@@ -17,10 +17,6 @@ const isProduction = NODE_ENV === 'production'
 
 module.exports = {
   entry: commonPaths.entryPath,
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
   module: {
     rules: [
       {

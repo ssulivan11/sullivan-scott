@@ -10,12 +10,6 @@
   z-index: 11;
   position: relative;
   height: 100%;
-
-  // &-inactive {
-  //   .home-headings {
-  //     opacity: 0;
-  //   }
-  // }
 }
 
 .heading {
@@ -62,10 +56,5 @@
   font-size: 0.75rem;
   border-radius: 5px;
   background-color: transparent;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    // transform: scale(1.1);
-  }
+  cursor: pointer;
 }
