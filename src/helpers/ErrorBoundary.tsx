@@ -14,7 +14,6 @@ interface State {
 class ErrorBoundary extends React.Component<Props, State> {
   static defaultProps = {
     retries: 0,
-    callbackFunction: () => {},
   }
 
   constructor(props) {
