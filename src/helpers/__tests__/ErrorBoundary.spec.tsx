@@ -22,6 +22,7 @@ const badCallbackFn = {
 const MockedComponent = () => <div />
 
 const setup = (props, renderer = shallow) => {
+  spyOn(console, 'error') // suppress errors from logging
   const component = renderer(
     <ErrorBoundary {...props}>
       <MockedComponent />

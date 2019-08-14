@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface Props {
-  callbackFunction(): any
+  callbackFunction?: () => {}
   retries: number
   children: JSX.Element[] | JSX.Element
 }
