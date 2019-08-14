@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface Props {
-  callbackFunction: object
+  callbackFunction(): any
   retries: number
   children: JSX.Element[] | JSX.Element
 }
@@ -33,9 +33,6 @@ class ErrorBoundary extends React.Component<Props, State> {
       this.setState({
         hasError: true,
       })
-      // Object.keys(errorInfo).forEach((key) => {
-      //   console.warn(key, errorInfo[key])
-      // })
       if (typeof callbackFunction === 'function') callbackFunction()
     }
   }
