@@ -9,6 +9,10 @@ const commonPaths = require('./paths')
 
 module.exports = {
   mode: 'production',
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
   stats: {
     assets: true,
     children: false,
