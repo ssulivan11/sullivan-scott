@@ -44,38 +44,37 @@ const App: React.FunctionComponent<AppProps> = () => {
 
   const heightWithGive = windowSize.height - (windowSize.height / 100) * 20
   const active =
-    // eslint-disable-next-line no-nested-ternary
     heightWithGive > scrollPosition.y ? 'home' : heightWithGive * 2 > scrollPosition.y ? 'about' : 'contact'
 
   const { mainHeadingText, subHeadingText, social, skills, bioHeading, bioText, bioImg } = content
 
   return (
     <div className={style.container}>
-      <ErrorBoundary>
-        <Home
-          active={active}
-          windowSize={windowSize}
-          mainHeadingText={mainHeadingText}
-          subHeadingText={subHeadingText}
-          data-test='home'
-        />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <About
-          active={active}
-          windowSize={windowSize}
-          bioHeading={bioHeading}
-          bioText={bioText}
-          skills={skills}
-          bioImg={bioImg}
-          data-test='about'
-        />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
-      </ErrorBoundary>
-
-      {/* <div className={style['gradient-background']} style={{ height: windowSize.height }} /> */}
+      <React.StrictMode>
+        <ErrorBoundary>
+          <Home
+            active={active}
+            windowSize={windowSize}
+            mainHeadingText={mainHeadingText}
+            subHeadingText={subHeadingText}
+            data-test='home'
+          />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <About
+            active={active}
+            windowSize={windowSize}
+            bioHeading={bioHeading}
+            bioText={bioText}
+            skills={skills}
+            bioImg={bioImg}
+            data-test='about'
+          />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
+        </ErrorBoundary>
+      </React.StrictMode>
     </div>
   )
 }

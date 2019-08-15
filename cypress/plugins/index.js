@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, @typescript-eslint/explicit-function-return-type */
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
