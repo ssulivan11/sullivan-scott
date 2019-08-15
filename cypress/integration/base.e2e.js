@@ -1,43 +1,29 @@
-import content from '../../src/helpers/content'
-
-const { title, mainHeadingText } = content
-
-const section = {
-  home: '[data-test="home"]',
-  about: '[data-test="about"]',
-  contact: '[data-test="contact"]',
-}
-
-const viewport = {
-  w: 550,
-  h: 750,
-}
+import { title, description, mainHeadingText, subHeadingText, bioHeading, bioText } from '../../src/helpers/content'
 
 describe('Base test', () => {
-  beforeEach(() => {
-    cy.server().viewport(viewport.w, viewport.h)
+  it('should set meta things', () => {
+    cy.visit('/')
+      .title()
+      .should('include', title)
+    cy.get('meta[name="description"]').should('have.attr', 'content', description)
   })
 
-  describe('Meta & Page Information', () => {
-    it('.should() - assert that meta title and 404 page are correct', () => {
-      cy.visit('/')
-        .title()
-        .should('include', title)
-        .get('h1')
-        .contains(mainHeadingText)
+  it('should set content', () => {
+    cy.get('h1')
+      .contains(mainHeadingText)
+      .get('h2')
+      .contains(subHeadingText)
+    cy.get('h2[data-test="bio-heading"]')
+      .contains(bioHeading)
+      .get('p[data-test="bio-text"]')
+      .contains(bioText)
 
-      cy.scrollTo(0, viewport.h * 2)
-        .get(section.about)
-        .isInViewport()
-      cy.scrollTo(0, viewport.h * 3)
-        .get(section.contact)
-        .isInViewport()
+    cy.get('footer')
+      .contains(new Date().getFullYear())
+      .contains('© Scott Sullivan')
+  })
 
-      // cy.scrollTo(0, 0)
-      //   .get('[type="button"]')
-      //   .click()
-      //   .get(section.about)
-      //   .isInViewport()
-    })
+  it('should assert the canonical url is correct', () => {
+    cy.get('head link[rel="canonical"]').should('have.attr', 'href', 'http://sullivanscott.com/')
   })
 })

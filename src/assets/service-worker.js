@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-globals, func-names, no-console */
+/* eslint-disable @typescript-eslint/explicit-function-return-type, no-restricted-globals, func-names, no-console */
 console.log('WORKER: executing.')
 
 /* A version number is useful when updating the worker logic,

@@ -41,8 +41,12 @@ const About: React.FunctionComponent<AboutProps> = ({
           />
         )}
 
-        <h2 className={style['bio-heading']}>{bioHeading}</h2>
-        <p className={style['bio-text']}>{bioText}</p>
+        <h2 className={style['bio-heading']} data-test='bio-heading'>
+          {bioHeading}
+        </h2>
+        <p className={style['bio-text']} data-test='bio-text'>
+          {bioText}
+        </p>
         <div className={style['bio-grid']}>
           {skills.map((skill) => {
             return (
