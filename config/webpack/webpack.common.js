@@ -20,20 +20,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         loader: 'babel-loader',
         exclude: /(node_modules)/,
       },
-      {
-        test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-          },
-        ],
-      },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {
         enforce: 'pre',
         test: /\.js$/,

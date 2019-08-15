@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+
 module.exports = function babelConfig(api) {
   api.cache(true)
 
   const presets = [
+    '@babel/preset-typescript',
     [
       '@babel/preset-env',
       {
@@ -25,10 +28,7 @@ module.exports = function babelConfig(api) {
   ]
 
   const plugins = [
-    'transform-react-remove-prop-types',
-    'transform-react-pure-class-to-function',
     '@babel/plugin-transform-runtime',
-    'react-hot-loader/babel',
     '@babel/plugin-proposal-optional-chaining',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     '@babel/plugin-proposal-function-sent',
@@ -36,9 +36,11 @@ module.exports = function babelConfig(api) {
     '@babel/plugin-proposal-numeric-separator',
     '@babel/plugin-proposal-throw-expressions',
     '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-transform-typescript',
     '@babel/plugin-syntax-import-meta',
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-json-strings',
+    // 'react-hot-loader/babel',
   ]
 
   return {
