@@ -7,10 +7,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const HtmlWebpackChangeAssetsExtensionPlugin = require('html-webpack-change-assets-extension-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const commonPaths = require('./paths')
-const content = require('../../src/helpers/content')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const { title, description, canonical, social } = content
+const commonPaths = require('./paths')
+const { title, description, canonical, social } = require('../../src/helpers/content')
 
 const NODE_ENV = process.env.NODE_ENV || 'production'
 const isProduction = NODE_ENV === 'production'
@@ -50,6 +50,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
     isProduction &&
       new CompressionPlugin({

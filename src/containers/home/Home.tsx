@@ -25,6 +25,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
     <div className={`container ${style.home} ${active === 'home' ? style['home-active'] : style['home-inactive']}`}>
       <div data-test='home-button' className={style['home-headings']}>
         <motion.h1
+          id='title1'
           className={`${style.heading} ${style['main-heading']}`}
           transition={{ duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
