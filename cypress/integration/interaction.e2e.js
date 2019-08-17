@@ -1,17 +1,6 @@
-import content from '../../src/helpers/content'
+import { section, viewport } from '../support/cypressHelpers'
 
-const section = {
-  home: '[data-test="home"]',
-  about: '[data-test="about"]',
-  contact: '[data-test="contact"]',
-}
-
-const viewport = {
-  w: 550,
-  h: 750,
-}
-
-describe('interactoin tests', () => {
+describe('interaction tests', () => {
   beforeEach(() => {
     cy.server().viewport(viewport.w, viewport.h)
   })
