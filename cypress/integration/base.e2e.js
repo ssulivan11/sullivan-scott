@@ -1,7 +1,7 @@
 import { title, description, mainHeadingText, subHeadingText, bioHeading, bioText } from '../../src/helpers/content'
 
-describe('Base test', () => {
-  it('should set meta things', () => {
+describe('base tests', () => {
+  it('should set meta tags', () => {
     cy.visit('/')
       .title()
       .should('include', title)
@@ -23,7 +23,7 @@ describe('Base test', () => {
       .contains('© Scott Sullivan')
   })
 
-  it('should assert the canonical url is correct', () => {
+  it('should assert the canonical url', () => {
     cy.get('head link[rel="canonical"]').should('have.attr', 'href', 'http://sullivanscott.com/')
   })
 })
