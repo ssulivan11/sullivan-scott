@@ -25,7 +25,8 @@ const About: React.FunctionComponent<AboutProps> = ({
 }) => {
   return (
     <div className={style['about-wrapper']} style={{ minHeight: windowSize.height }} data-test={dataTest}>
-      <div
+      <main
+        role='main'
         className={`container ${style.about} ${active === 'about' ? style['about-active'] : style['about-inactive']}`}>
         {bioImg && (
           // @ts-ignore - loading error in ts
@@ -61,7 +62,7 @@ const About: React.FunctionComponent<AboutProps> = ({
             )
           })}
         </div>
-      </div>
+      </main>
     </div>
   )
 }

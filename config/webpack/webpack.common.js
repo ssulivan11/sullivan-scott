@@ -49,6 +49,13 @@ module.exports = {
     modules: ['src', 'node_modules'],
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss'],
   },
+  stats: isProduction
+    ? {
+        assets: true,
+        children: false,
+        modules: false,
+      }
+    : 'errors-only',
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),

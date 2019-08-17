@@ -5,9 +5,9 @@ const section = {
 }
 
 describe('a11y tests', () => {
-  it('should test standards of contact section', () => {
-    cy.visit('/').get(section.contact)
-    // .injectAxe()
-    // .checkA11y()
+  it('should test standard accessibility issues using axe-core', () => {
+    cy.visit('/')
+      .injectAxe()
+      .checkA11y()
   })
 })

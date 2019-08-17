@@ -22,7 +22,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
   'data-test': dataTest,
 }) => (
   <div style={{ height: windowSize.height, position: 'relative' }} data-test={dataTest}>
-    <div className={`container ${style.home} ${active === 'home' ? style['home-active'] : style['home-inactive']}`}>
+    <header className={`container ${style.home} ${active === 'home' ? style['home-active'] : style['home-inactive']}`}>
       <div data-test='home-button' className={style['home-headings']}>
         <motion.h1
           id='title1'
@@ -62,7 +62,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
           Learn more
         </motion.button>
       </div>
-    </div>
+    </header>
   </div>
 )
 
