@@ -16,3 +16,4 @@ cypress/screenshots/
 cypress/helpers/dist/
 reports/
 coverage/lcov-report/
+coverage/coverage-summary.json
