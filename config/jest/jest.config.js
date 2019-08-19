@@ -28,7 +28,7 @@ const config = {
     '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
-  moduleFileExtensions: ['tsx', 'css', 'scss', 'js', 'json', 'jsx'],
+  moduleFileExtensions: ['ts', 'tsx', 'css', 'scss', 'js', 'json', 'jsx'],
   coverageDirectory: '<rootDir>/reports/coverage',
 }
 
