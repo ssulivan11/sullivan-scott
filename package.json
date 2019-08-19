@@ -32,8 +32,8 @@
     "--------- HELPERS ----------------------------": "",
     "check:status": "node -e 'require(\"./config/helpers/nodeScripts\").statusCheck()' && node -e 'require(\"./config/helpers/nodeScripts\").branchCheck()'",
     "copy:assets": "node -e 'require(\"./config/helpers/nodeScripts\").moveAssets()'",
-    "precommit:hook": "yarn test:unit --silent && jest-coverage-badges && lint-staged",
-    "prepush:hook": "yarn check:status && yarn test:e2e:run && yarn bundle:size",
+    "basges": "yarn test:unit --silent && jest-coverage-badges",
+    "prepush:hook": "yarn check:status && yarn test:unit && yarn test:e2e:run && yarn bundle:size",
     "nuke": "yarn cache clean && yarn global add rimraf && rimraf node_modules && yarn && yarn run clean"
   },
   "lint-staged": {
@@ -45,7 +45,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit:hook",
+      "pre-commit": "lint-staged",
       "pre-push": "yarn prepush:hook"
     }
   },
