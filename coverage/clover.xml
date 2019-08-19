@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1565458775418" clover="3.2.0">
+  <project timestamp="1565458775418" name="All files">
+    <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1" elements="12" coveredelements="9" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2"/>
+    <package name="config.mocks">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="styleMock.js" path="/Users/sullivas/Desktop/_PROJECTS/sullivan-scott/config/mocks/styleMock.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.containers.home">
+      <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="Home.tsx" path="/Users/sullivas/Desktop/_PROJECTS/sullivan-scott/src/containers/home/Home.tsx">
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

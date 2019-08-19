@@ -6826,6 +6826,13 @@ jest-config@^24.8.0:
     pretty-format "^24.8.0"
     realpath-native "^1.1.0"
 
+jest-coverage-badges@^1.1.2:
+  version "1.1.2"
+  resolved "https://nexus.deveng.systems/content/groups/NPM/jest-coverage-badges/-/jest-coverage-badges-1.1.2.tgz#a70786b139fd8fb685db732e1e2d916d8a47287e"
+  integrity sha512-44A7i2xR6os8+fWk8ZRM6W4fKiD2jwKOLU9eB3iTIIWACd9RbdvmiCNpQZTOsUBhKvz7aQ/ASFhu5JOEhWUOlg==
+  dependencies:
+    mkdirp "0.5.1"
+
 jest-css-modules-transform@^2.5.0:
   version "2.5.0"
   resolved "https://nexus.deveng.systems/content/groups/NPM/jest-css-modules-transform/-/jest-css-modules-transform-2.5.0.tgz#69fce67331d7e7386d7df4dae7178419dc6c2916"
