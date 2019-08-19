@@ -32,7 +32,7 @@
     "--------- HELPERS ----------------------------": "",
     "check:status": "node -e 'require(\"./config/helpers/nodeScripts\").statusCheck()' && node -e 'require(\"./config/helpers/nodeScripts\").branchCheck()'",
     "copy:assets": "node -e 'require(\"./config/helpers/nodeScripts\").moveAssets()'",
-    "precommit:hook": "lint-staged && yarn test:unit --silent && jest-coverage-badges",
+    "precommit:hook": "yarn test:unit --silent && jest-coverage-badges && lint-staged",
     "prepush:hook": "yarn check:status && yarn test:e2e:run && yarn bundle:size",
     "nuke": "yarn cache clean && yarn global add rimraf && rimraf node_modules && yarn && yarn run clean"
   },
