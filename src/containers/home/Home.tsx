@@ -29,7 +29,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
           className={`${style.heading} ${style['main-heading']}`}
           transition={{ duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          initial={{ y: -1000, opacity: 0 }}>
+          initial={{ y: -100, opacity: 0 }}>
           {mainHeadingText}
         </motion.h1>
         <motion.hr
@@ -42,7 +42,7 @@ const Home: React.FunctionComponent<HomeProps> = ({
           className={`${style.heading} ${style['sub-heading']}`}
           transition={{ duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          initial={{ y: 1000, opacity: 0 }}>
+          initial={{ y: 100, opacity: 0 }}>
           {subHeadingText}
         </motion.h2>
         <motion.button
