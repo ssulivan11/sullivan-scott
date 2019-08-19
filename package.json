@@ -44,7 +44,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn check:status && yarn test:unit --silent && yarn bundle:size && rm -rf dist/ && yarn test:e2e:run"
+      "pre-push": "yarn check:status && yarn test:unit --silent && yarn bundle:size && yarn test:e2e:run"
     }
   },
   "engines": {
