@@ -42,7 +42,7 @@ const App: React.FunctionComponent<AppProps> = () => {
     }
   }, [])
 
-  const heightWithGive = windowSize.height - (windowSize.height / 100) * 20
+  const heightWithGive = windowSize.height - (windowSize.height / 100) * 30
   const active =
     heightWithGive > scrollPosition.y ? 'home' : heightWithGive * 2 > scrollPosition.y ? 'about' : 'contact'
 
