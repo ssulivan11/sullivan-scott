@@ -32,6 +32,8 @@
     "--------- HELPERS ----------------------------": "",
     "check:status": "node -e 'require(\"./config/helpers/nodeScripts\").statusCheck()' && node -e 'require(\"./config/helpers/nodeScripts\").branchCheck()'",
     "copy:assets": "node -e 'require(\"./config/helpers/nodeScripts\").moveAssets()'",
+    "badges": "yarn test:unit --silent && jest-coverage-badges output './src/assets'",
+    "prepush:hook": "yarn check:status && yarn test:unit && yarn test:e2e:run && yarn bundle:size",
     "nuke": "yarn cache clean && yarn global add rimraf && rimraf node_modules && yarn && yarn run clean"
   },
   "lint-staged": {
@@ -44,7 +46,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn check:status && yarn test:unit --silent && yarn bundle:size && yarn test:e2e:run"
+      "pre-push": "yarn prepush:hook"
     }
   },
   "engines": {
@@ -121,6 +123,7 @@
     "html-webpack-plugin": "3.2.0",
     "husky": "^1.2.0",
     "jest": "24.8.0",
+    "jest-coverage-badges": "^1.1.2",
     "jest-css-modules-transform": "^2.5.0",
     "jest-enzyme": "7.0.2",
     "jest-fetch-mock": "2.1.2",
