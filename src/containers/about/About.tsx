@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import * as style from './about.scss'
 
 interface AboutProps {
@@ -32,7 +32,6 @@ const About: React.FunctionComponent<AboutProps> = ({
           // @ts-ignore - loading error in ts
           <img
             loading='lazy'
-            intrinsicsize='250x200'
             key='bio-pic'
             className={style['bio-pic']}
             width='150'
