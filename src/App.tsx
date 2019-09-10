@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import { hot } from 'react-hot-loader/root'
-import * as throttle from 'lodash.throttle'
+import throttle from 'lodash.throttle'
 
-import * as content from './helpers/content'
+import content from './helpers/content'
 import ErrorBoundary from './helpers/ErrorBoundary'
 
 import Home from './containers/home/Home'
