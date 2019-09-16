@@ -4,16 +4,20 @@
   "description": "Scott Sullivan informational website",
   "theme_color": "#333333",
   "background_color": "#333333",
-  "display": "standalone",
+  "display": "fullscreen",
   "Scope": "/",
   "orientation": "any",
   "start_url": "/",
-  "splash_pages": null,
   "icons": [
     {
       "src": "images/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }
