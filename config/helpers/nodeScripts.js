@@ -1,7 +1,7 @@
 /* eslint-disable no-console, @typescript-eslint/no-var-requires */
 const branch = require('git-branch')
 const shell = require('shelljs')
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 require('colors')
 
@@ -44,6 +44,13 @@ module.exports.branchCheck = () => {
 
 module.exports.moveAssets = () => {
   const moveFiles = (files) => {
+    // move images
+    fs.copy('./src/assets/images/', './build/images', (err) => {
+      if (err) return console.error(err)
+      console.log(`${`✔`.green}  Copied - ./src/assets/images/*`)
+    })
+
+    // move indiv files
     for (let i = 0; i < files.length; i += 1) {
       const file = files[i]
       const f = path.basename(file)
@@ -55,10 +62,10 @@ module.exports.moveAssets = () => {
         console.log(`${`✔`.green}  Copied - ${files[i]}`)
       })
       source.on('error', (err) => {
-        console.log(err)
+        console.error(err)
       })
     }
   }
-  const filesToMove = ['./src/assets/manifest.json', './src/assets/favicon.ico', './src/assets/service-worker.js']
+  const filesToMove = ['./src/assets/manifest.json', './src/assets/service-worker.js']
   moveFiles(filesToMove)
 }

@@ -1,5 +1,26 @@
 const webpack = require('webpack')
+const boxen = require('boxen')
+const chalk = require('chalk')
 const commonPaths = require('./paths')
+
+const pckg = require('../../package')
+const port = 8081
+
+const webpackSeverMsg = () => {
+  const time = `${new Date().getHours()}:${('0' + new Date().getMinutes()).slice(-2)}`
+  /* eslint-disable */
+  return console.log(
+    `\n${boxen(
+      `
+${chalk.green(`${pckg.name.toUpperCase()} v${pckg.version}                        @${time}`)}
+${chalk.grey('---------------------------------------------------\n')}
+${chalk.white(`Local HMR Dev Server: `)}${chalk.cyan(`http://localhost:${port}/`)}
+`,
+      { borderStyle: 'round', padding: 1, borderColor: 'cyan' },
+    )}\n`,
+  )
+  /* eslint-enable */
+}
 
 module.exports = {
   mode: 'development',
@@ -30,9 +51,19 @@ module.exports = {
     ],
   },
   devServer: {
+    port,
     contentBase: commonPaths.outputPath,
     compress: true,
     hot: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    {
+      apply: (compiler) => {
+        compiler.hooks.afterPlugins.tap('afterPlugins', () => {
+          webpackSeverMsg(port)
+        })
+      },
+    },
+  ],
 }

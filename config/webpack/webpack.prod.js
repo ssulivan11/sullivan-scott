@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
 
 const commonPaths = require('./paths')
 
@@ -62,6 +63,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new DuplicatePackageCheckerPlugin({
+      emitError: true,
+    }),
     new MiniCssExtractPlugin({
       filename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,
       chunkFilename: `${commonPaths.cssFolder}/[name].[chunkhash].css`,

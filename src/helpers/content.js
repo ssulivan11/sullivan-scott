@@ -1,7 +1,7 @@
 const content = {
-  title: 'Scott Sullivan | Sr UI Engineer',
-  description: 'Scott Sullivan | Sr UI Engineer',
-  canonical: 'http://sullivanscott.com/',
+  title: 'Scott Sullivan UI Engineer',
+  description: 'Scott Sullivan UI Engineer',
+  canonical: 'https://ssullivan.info/',
   mainHeadingText: 'Scott Sullivan',
   subHeadingText: 'UI Engineer - London / Chicago',
   bioHeading: "Hello, I’m Scott and it's nice to meet you.",

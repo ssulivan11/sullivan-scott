@@ -1,12 +1,19 @@
 {
-  "short_name": "SullivanScott",
-  "name": "SullivanScott",
-  "description": "Scott Sullivan UI Engineer Website",
-  "start_url": "/?utm_source=a2hs",
-  "display": "standalone",
-  "orientation": "natural",
-  "lang": "en",
+  "name": "ssullivan.info",
+  "short_name": "ssullivan.info",
+  "description": "Scott Sullivan informational website",
   "theme_color": "#333333",
   "background_color": "#333333",
-  "categories": ["javascript", "web"]
+  "display": "browser",
+  "Scope": "/",
+  "orientation": "any",
+  "start_url": "/",
+  "splash_pages": null,
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
 }
