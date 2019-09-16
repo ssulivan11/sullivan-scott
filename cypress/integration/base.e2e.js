@@ -24,6 +24,6 @@ describe('base tests', () => {
   })
 
   it('should assert the canonical url', () => {
-    cy.get('head link[rel="canonical"]').should('have.attr', 'href', 'http://sullivanscott.com/')
+    cy.get('head link[rel="canonical"]').should('have.attr', 'href', 'https://ssullivan.info/')
   })
 })
