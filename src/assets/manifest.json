@@ -4,7 +4,7 @@
   "description": "Scott Sullivan informational website",
   "theme_color": "#333333",
   "background_color": "#333333",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "orientation": "any",
   "start_url": "/",
