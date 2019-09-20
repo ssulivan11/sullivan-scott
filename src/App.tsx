@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, StrictMode } from 'react'
 import { hot } from 'react-hot-loader/root'
 import throttle from 'lodash.throttle'
 
@@ -22,8 +22,8 @@ const App: React.FunctionComponent<AppProps> = () => {
   })
   const getScrollPosition = () => ({ y: window.pageYOffset })
 
-  const [windowSize, setWindowSize] = React.useState(getWindowSize())
-  const [scrollPosition, setScrollPosition] = React.useState(getScrollPosition())
+  const [windowSize, setWindowSize] = useState(getWindowSize())
+  const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
 
   const handleResize = throttle(() => {
     setWindowSize(getWindowSize())
@@ -32,7 +32,7 @@ const App: React.FunctionComponent<AppProps> = () => {
     setScrollPosition(getScrollPosition())
   }, 50)
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0)
     window.addEventListener('resize', handleResize)
     window.addEventListener('scroll', handleScroll)
@@ -50,7 +50,7 @@ const App: React.FunctionComponent<AppProps> = () => {
 
   return (
     <div className={style.container}>
-      <React.StrictMode>
+      <StrictMode>
         <ErrorBoundary>
           <Home
             active={active}
@@ -74,7 +74,7 @@ const App: React.FunctionComponent<AppProps> = () => {
         <ErrorBoundary>
           <Contact active={active} windowSize={windowSize} social={social} data-test='contact' />
         </ErrorBoundary>
-      </React.StrictMode>
+      </StrictMode>
     </div>
   )
 }

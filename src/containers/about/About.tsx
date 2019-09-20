@@ -28,18 +28,14 @@ const About: React.FunctionComponent<AboutProps> = ({
       <main
         role='main'
         className={`container ${style.about} ${active === 'about' ? style['about-active'] : style['about-inactive']}`}>
-        {bioImg && (
-          // @ts-ignore - loading error in ts
-          <img
-            loading='lazy'
-            key='bio-pic'
-            className={style['bio-pic']}
-            width='150'
-            height='150'
-            alt="Scott's profile pic"
-            src={bioImg}
-          />
-        )}
+        <img
+          key='bio-pic'
+          className={style['bio-pic']}
+          width='150'
+          height='150'
+          alt="Scott's profile pic"
+          src={bioImg}
+        />
 
         <h2 className={style['bio-heading']} data-test='bio-heading'>
           {bioHeading}
