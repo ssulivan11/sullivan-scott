@@ -18,8 +18,6 @@ addParameters({
 
 addDecorator(withA11y)
 
-console.warn(process.env)
-
 addDecorator(
   withInfo({
     styles: {
@@ -49,8 +47,9 @@ addDecorator(
   }),
 )
 
-const req = require.context('../stories', true, /\.story\.tsx$/)
+const req = require.context('../src', true, /\.story\.tsx$/)
 function loadStories() {
+  require('./index.story.tsx')
   req.keys().forEach(req)
 }
 

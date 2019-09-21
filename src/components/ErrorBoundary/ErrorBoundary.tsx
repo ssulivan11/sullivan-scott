@@ -1,9 +1,12 @@
 import React from 'react'
+import Alert from '../Alert/Alert'
 
 interface Props {
   callbackFunction?: () => {}
   retries: number
-  children: JSX.Element[] | JSX.Element
+  showErrorMsg?: boolean
+  errorMsg?: string
+  children?: JSX.Element[] | JSX.Element
 }
 
 interface State {
@@ -33,14 +36,23 @@ class ErrorBoundary extends React.Component<Props, State> {
         hasError: true,
       })
       if (typeof callbackFunction === 'function') callbackFunction()
+      console.error(error, errorInfo)
     }
   }
 
   render() {
-    const { children, retries } = this.props
+    const {
+      children,
+      retries,
+      showErrorMsg = false,
+      errorMsg = "Oops, something's gone wrong, please try again later.",
+    } = this.props
     const { errorCount, hasError } = this.state
 
-    if ((retries >= 1 && errorCount > retries) || hasError) return null
+    if ((retries >= 1 && errorCount > retries) || hasError) {
+      if (showErrorMsg) return <Alert kind='error' message={errorMsg} />
+      return null
+    }
     return children
   }
 }

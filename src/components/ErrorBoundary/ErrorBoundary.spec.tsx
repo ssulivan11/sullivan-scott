@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow, mount } from 'enzyme'
-import ErrorBoundary from '../ErrorBoundary'
+import ErrorBoundary from './ErrorBoundary'
 
 const defaultProps = {
   retries: 0,
