@@ -19,6 +19,12 @@ const badCallbackFn = {
   callbackFunction: null,
 }
 
+const errorMessage = {
+  ...defaultProps,
+  showErrorMsg: true,
+  errorMsg: 'Oops, we got problems',
+}
+
 const MockedComponent = () => <div />
 
 const setup = (props, renderer = shallow) => {
@@ -52,5 +58,10 @@ describe('ErrorBoundary', () => {
   it('Should NOT the callback function if not a fn', () => {
     const component = setup(badCallbackFn, mount)
     expect(component.getComponent().prop('callbackFunction')).toBeNull()
+  })
+
+  it('Should NOT the callback function if not a fn', () => {
+    const component = setup(errorMessage, mount)
+    expect(component.getComponent()).toMatchSnapshot()
   })
 })

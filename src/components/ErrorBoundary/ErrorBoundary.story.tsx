@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import ErrorBoundary from './ErrorBoundary'
-import README from './README.md'
 
 const stories = storiesOf('Components | Error Boundary', module)
 
@@ -100,21 +99,11 @@ function getItem(type = 'default') {
 }
 
 stories
-  .add('Default', () => getItem('default'), {
-    notes: { markdown: README },
-  })
-  .add('With Retries', () => getItem('retries'), {
-    notes: { markdown: README },
-  })
-  .add('Component Level', () => getItem('component-level'), {
-    notes: { markdown: README },
-  })
-  .add('Entry Error', () => getItem('entry-error'), {
-    notes: { markdown: README },
-  })
-  .add('With No Error Boundary', () => getItem('no-error-boundary'), {
-    notes: { markdown: README },
-  })
+  .add('Default', () => getItem('default'))
+  .add('With Retries', () => getItem('retries'))
+  .add('Component Level', () => getItem('component-level'))
+  .add('Entry Error', () => getItem('entry-error'))
+  .add('With No Error Boundary', () => getItem('no-error-boundary'))
 
 interface BuggyCounterProps {
   component: string

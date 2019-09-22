@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary Should NOT the callback function if not a fn 1`] = `ReactWrapper {}`;
