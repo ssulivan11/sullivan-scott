@@ -13,6 +13,7 @@
     "serve": "node ./server.js",
     "--------- STORYBOOK ------------------------------": "",
     "storybook": "start-storybook -p 9003",
+    "build:storybook": "build-storybook -o build/storybook",
     "--------- LINTING ----------------------------": "",
     "lint": "yarn lint:scss && yarn lint:js",
     "lint:scss": "stylelint 'src/**.scss' --ignore-path .eslintignore",
