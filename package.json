@@ -180,7 +180,7 @@
     },
     {
       "path": "./build/css/main.*.css",
-      "maxSize": "2 kB"
+      "maxSize": "2.1 kB"
     }
   ]
 }
