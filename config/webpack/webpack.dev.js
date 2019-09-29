@@ -12,9 +12,10 @@ const webpackSeverMsg = () => {
   return console.log(
     `\n${boxen(
       `
-${chalk.green(`${pckg.name.toUpperCase()} v${pckg.version}                        @${time}`)}
-${chalk.grey('---------------------------------------------------\n')}
+${chalk.green(`${pckg.name.toUpperCase()} v${pckg.version}                 @${time}`)}
+${chalk.grey('--------------------------------------------\n')}
 ${chalk.white(`Local HMR Dev Server: `)}${chalk.cyan(`http://localhost:${port}/`)}
+${chalk.white(`Live Site: `)}${chalk.cyan(`https://ssullivan.info/`)}
 `,
       { borderStyle: 'round', padding: 1, borderColor: 'cyan' },
     )}\n`,
