@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDirs": ["src", "stories"],
     "esModuleInterop": true,
     "outDir": "./build/",
     "sourceMap": true,

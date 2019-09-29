@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow, mount } from 'enzyme'
-import ErrorBoundary from '../ErrorBoundary'
+import ErrorBoundary from './ErrorBoundary'
 
 const defaultProps = {
   retries: 0,
@@ -17,6 +17,12 @@ const withCallbackFn = {
 const badCallbackFn = {
   ...defaultProps,
   callbackFunction: null,
+}
+
+const errorMessage = {
+  ...defaultProps,
+  showErrorMsg: true,
+  errorMsg: 'Oops, we got problems',
 }
 
 const MockedComponent = () => <div />
@@ -52,5 +58,10 @@ describe('ErrorBoundary', () => {
   it('Should NOT the callback function if not a fn', () => {
     const component = setup(badCallbackFn, mount)
     expect(component.getComponent().prop('callbackFunction')).toBeNull()
+  })
+
+  it('Should NOT the callback function if not a fn', () => {
+    const component = setup(errorMessage, mount)
+    expect(component.getComponent()).toMatchSnapshot()
   })
 })

@@ -1,4 +1,4 @@
-const coveragePathIgnorePatterns = ['src/assets/*', 'src/index.tsx']
+const coveragePathIgnorePatterns = ['src/assets/*', 'src/index.tsx', '.story.tsx']
 
 const coverageSection = {
   coveragePathIgnorePatterns,

@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader/root'
 import throttle from 'lodash.throttle'
 
 import content from './helpers/content'
-import ErrorBoundary from './components/ErrorBoundary'
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 
 import Home from './containers/home/Home'
 import About from './containers/about/About'
