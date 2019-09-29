@@ -2,10 +2,25 @@ import React from 'react'
 import Alert from '../Alert/Alert'
 
 interface Props {
+  /**
+   * Callback function once error retry limit is reached
+   */
   callbackFunction?: () => {}
+  /**
+   * Set the amount of times to retry a success state until error is captured
+   */
   retries: number
+  /**
+   * If error is caught, to show or not to show the error message
+   */
   showErrorMsg?: boolean
+  /**
+   * If showErrorMsg, then you can define a custom error message
+   */
   errorMsg?: string
+  /**
+   * Specify the content of your ErrorBoundary
+   */
   children?: JSX.Element[] | JSX.Element
 }
 
