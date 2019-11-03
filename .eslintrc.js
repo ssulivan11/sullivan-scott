@@ -28,12 +28,6 @@ const eslintConfig = {
         aspects: ['invalidHref'],
       },
     ],
-    'no-trailing-spaces': [
-      2,
-      {
-        skipBlankLines: true,
-      },
-    ],
     'no-unused-vars': 0,
     'prefer-template': 0,
     'react/jsx-boolean-value': ['warn', 'never'],
@@ -69,9 +63,6 @@ const eslintConfig = {
     React: true,
     document: true,
     window: true,
-    jQuery: true,
-    $: true,
-    localStorage: true,
     fetch: true,
   },
 }
