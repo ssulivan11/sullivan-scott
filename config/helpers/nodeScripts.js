@@ -25,7 +25,7 @@ module.exports.statusCheck = () => {
 module.exports.branchCheck = () => {
   branch((err, name) => {
     if (err) throw err
-    const validBranchDirs = ['feature/', 'refactor/', 'bug/']
+    const validBranchDirs = ['feature/', 'refactor/', 'bug/', 'upgrades/']
     let validName = false
     for (let i = 0; i !== validBranchDirs.length; i += 1) {
       if (name.indexOf(validBranchDirs[i]) !== -1) validName = true
