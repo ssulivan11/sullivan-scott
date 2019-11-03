@@ -176,7 +176,7 @@
     },
     {
       "path": "./build/js/vendors.*.js",
-      "maxSize": "26.7 kB"
+      "maxSize": "26.91 kB"
     },
     {
       "path": "./build/css/main.*.css",
