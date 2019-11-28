@@ -33,7 +33,7 @@ module.exports.branchCheck = () => {
     if (!validName) {
       console.log(`${`\n ❌  Git Branch Name Error:`} - ${`${name}`.grey} \n`)
       console.log(`    ▶ Your branch name does not match the valid checks, please use of the following:`)
-      console.log(`      ${validBranchDirs}\n`.blue)
+      console.log(`      ${validBranchDirsStrg.replace(',', ', ')}\n`.blue)
       shell.exec(process.exit(1))
     } else {
       console.log(`${`\n ✔`.green}  Git Branch Name Valid - ${`${name}`.grey} \n`)
