@@ -33,40 +33,38 @@ const About: React.FunctionComponent<AboutProps> = ({
       <main
         role='main'
         className={`container ${style.about} ${active === 'about' ? style['about-active'] : style['about-inactive']}`}>
-        <div className={style['bio-pic']}>
-          <motion.span
-            style={{
-              scale: circle1Scale,
-            }}
+        {bioImg && (
+          // @ts-ignore - loading error in ts
+          <img loading='lazy'
+            intrinsicsize='250x200'
+            key='bio-pic'
+            className={style['bio-pic']}
+            width='150'
+            height='150'
+            alt="Scott's profile pic"
+            src={bioImg}
           />
-          <motion.span
-            style={{
-              scale: circle2Scale,
-            }}
-          />
-          <img key='bio-pic' width='150' height='150' alt="Scott's profile pic" src={bioImg} />
-        </div>
 
-        <h2 className={style['bio-heading']} data-test='bio-heading'>
-          {bioHeading}
-        </h2>
-        <p className={style['bio-text']} data-test='bio-text'>
-          {bioText}
-        </p>
-        <div className={style['bio-grid']}>
-          {skills.map((skill) => {
-            return (
-              <div className={style['bio-grid-item']} key={skill.title}>
-                <h3 className={style['bio-grid-title']}>{skill.title}</h3>
-                <ul tabIndex={0}>
-                  {skill.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )
-          })}
-        </div>
+          <h2 className={style['bio-heading']} data-test='bio-heading'>
+            {bioHeading}
+          </h2>
+          <p className={style['bio-text']} data-test='bio-text'>
+            {bioText}
+          </p>
+          <div className={style['bio-grid']}>
+            {skills.map((skill) => {
+              return (
+                <div className={style['bio-grid-item']} key={skill.title}>
+                  <h3 className={style['bio-grid-title']}>{skill.title}</h3>
+                  <ul tabIndex={0}>
+                    {skill.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
       </main>
     </div>
   )
