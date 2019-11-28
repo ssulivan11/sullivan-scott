@@ -44,27 +44,27 @@ const About: React.FunctionComponent<AboutProps> = ({
             alt="Scott's profile pic"
             src={bioImg}
           />
-
-          <h2 className={style['bio-heading']} data-test='bio-heading'>
-            {bioHeading}
-          </h2>
-          <p className={style['bio-text']} data-test='bio-text'>
-            {bioText}
-          </p>
-          <div className={style['bio-grid']}>
-            {skills.map((skill) => {
-              return (
-                <div className={style['bio-grid-item']} key={skill.title}>
-                  <h3 className={style['bio-grid-title']}>{skill.title}</h3>
-                  <ul tabIndex={0}>
-                    {skill.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            })}
-          </div>
+        )}
+        <h2 className={style['bio-heading']} data-test='bio-heading'>
+          {bioHeading}
+        </h2>
+        <p className={style['bio-text']} data-test='bio-text'>
+          {bioText}
+        </p>
+        <div className={style['bio-grid']}>
+          {skills.map((skill) => {
+            return (
+              <div className={style['bio-grid-item']} key={skill.title}>
+                <h3 className={style['bio-grid-title']}>{skill.title}</h3>
+                <ul tabIndex={0}>
+                  {skill.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
       </main>
     </div>
   )
