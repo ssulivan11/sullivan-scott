@@ -3,6 +3,6 @@ declare module '*.scss'
 
 declare namespace TSX {
   interface HTMLAttributes {
-    loading: any
+    loading?: "auto" | "eager" | "lazy";
   }
 }
