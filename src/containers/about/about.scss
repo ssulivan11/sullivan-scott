@@ -4,7 +4,7 @@
   flex-direction: column;
   background: linear-gradient(45deg, #028090, #05668d, #028090, #05668d);
   background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+  // animation: Gradient 15s ease infinite;
 
   z-index: 20;
   position: relative;
@@ -147,26 +147,14 @@
   }
 }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.8);
-  }
-  80% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.8);
-  }
-}
+// @keyframes Gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
