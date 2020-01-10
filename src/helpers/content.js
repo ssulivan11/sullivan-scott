@@ -6,9 +6,8 @@ const content = {
   subHeadingText: 'UI Engineer - London / Chicago',
   bioHeading: 'Hello and welcome',
   bioText:
-    "I'm an experienced Senior Software Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences.",
-  bioImg:
-    'https://scontent-lhr3-1.cdninstagram.com/vp/32a3801cf287c36ce0d8b09cc0551a61/5DE61703/t51.2885-19/51555128_153971348831636_6628374679469948928_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com',
+    "I'm a Senior Software Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences.",
+  bioImg: 'images/profile-pic.jpg',
   bioFavorites: '',
   skills: [
     {
@@ -46,7 +45,7 @@ const content = {
     },
   ],
   social: {
-    linkedIn: 'https://www.linkedin.com/in/scott-j-sullivan-14094a58/',
+    linkedIn: 'https://www.linkedin.com/in/scott-j-sullivan',
     github: 'https://github.com/ssulivan11',
     codePen: 'https://codepen.io/ssulivan11',
   },
