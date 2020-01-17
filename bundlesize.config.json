@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "path": "./build/js/main.*.js",
+      "maxSize": "4.95 kB"
+    },
+    {
+      "path": "./build/js/vendors.*.js",
+      "maxSize": "27.35 kB"
+    },
+    {
+      "path": "./build/css/main.*.css",
+      "maxSize": "2.1 kB"
+    }
+  ]
+}
