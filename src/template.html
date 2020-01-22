@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
-    <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>" />
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png" />
-    <link rel="apple-touch-icon" href="images/favicon.png" />
+<head>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#333333" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+  <link rel="canonical" href="<%= htmlWebpackPlugin.options.canonical %>" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://scontent-lhr3-1.cdninstagram.com" />
-    <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#333333" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143603971-1"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js').then(
-          function() {
-            console.log('🎉 SW Started')
-          },
-          function() {
-            console.warn('SW Failure')
-          },
-        )
-      }
-    </script>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://scontent-lhr3-1.cdninstagram.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
 
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', 'UA-143603971-1')
-    </script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200&display=swap&text=HeloImScotulivanrUEgLdCh/"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <noscript>
-      <h1>👋 <%= htmlWebpackPlugin.options.title %></h1>
-      <ul>
-        <li><a href="<%= htmlWebpackPlugin.options.social.linkedIn %>">Linkedin</a></li>
-        <li><a href="<%= htmlWebpackPlugin.options.social.github %>">Github</a></li>
-        <li><a href="<%= htmlWebpackPlugin.options.social.codepen %>">CodePen</a></li>
-      </ul>
-    </noscript>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143603971-1"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(
+        function () {
+          console.log('🎉 Service Worker Registered')
+        },
+        function () {
+          console.warn('❌ Service Worker Failed')
+        },
+      )
+    }
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'UA-143603971-1')
+  </script>
+  <script>
+    setTimeout(() => console.log('\n\nHello and welcome 👋\n\nI hope you enjoy this site, as I take a lot of pride in the performance metrics, lighthouse scores, and testing coverage.\n\nCan see and read more here:\nhttps://github.com/ssulivan11/sullivan-scott\n\n\n'), 2500)
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200&display=swap&text=HeloImScotulivanrUEgLdCh/"
+    rel="stylesheet" />
+</head>
 
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es6%2Ces5"></script>
-    <script crossorigin src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
-    <div id="app"></div>
-  </body>
+<body>
+  <noscript>
+    <h1>👋 <%= htmlWebpackPlugin.options.title %></h1>
+    <ul>
+      <li><a href="<%= htmlWebpackPlugin.options.social.linkedIn %>">Linkedin</a></li>
+      <li><a href="<%= htmlWebpackPlugin.options.social.github %>">Github</a></li>
+      <li><a href="<%= htmlWebpackPlugin.options.social.codepen %>">CodePen</a></li>
+    </ul>
+  </noscript>
+
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es6%2Ces5"></script>
+  <script crossorigin src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
+  <div id="app"></div>
+</body>
+
 </html>

@@ -1,6 +1,4 @@
 import React from 'react'
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
-
 import * as style from './about.scss'
 
 interface AboutProps {
@@ -24,11 +22,7 @@ const About: React.FunctionComponent<AboutProps> = ({
   bioText,
   bioImg,
   'data-test': dataTest,
-}) => {
-  const { scrollYProgress } = useViewportScroll()
-  const circle1Scale = useTransform(scrollYProgress, [0, 1], [0.2, 2])
-  const circle2Scale = useTransform(scrollYProgress, [0, 1], [0.1, 2])
-  return (
+}) => (
     <div className={style['about-wrapper']} style={{ minHeight: windowSize.height }} data-test={dataTest}>
       <main
         role='main'
@@ -68,6 +62,6 @@ const About: React.FunctionComponent<AboutProps> = ({
       </main>
     </div>
   )
-}
+
 
 export default About
