@@ -2,7 +2,7 @@
 
 ![](./src/assets/badge-statements.svg) ![](./src/assets/badge-branches.svg) ![](./src/assets/badge-functions.svg) ![](./src/assets/badge-lines.svg)
 
-I'm an experienced UI Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences. This is the website for my informational website about me and can be found here at [ssullivan.info](https://ssullivan.info/).
+I'm an experienced UI Engineer who is meticulous about quality, meeting requirements within timelines and pushing technical boundaries to deliver outstanding user experiences. This is the website for my informational website about me and can be found here at [scottsullivan.dev](https://scottsullivan.dev/).
 
 ## Getting started
 
